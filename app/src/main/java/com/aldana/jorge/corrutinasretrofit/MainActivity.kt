@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener,
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://dog.ceo/api/breeds/")
+            .baseUrl("https://dog.ceo/api/breed/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener,
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if (query != null) {
-            searchByName(query.toLowerCase(Locale.getDefault()))
+            searchByName(query.lowercase(Locale.getDefault()))
         }
             return true
     }
